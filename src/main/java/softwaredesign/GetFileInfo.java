@@ -18,10 +18,38 @@ public class GetFileInfo {
             int startIndex = actual.indexOf("<trkseg>");
             int endIndex = actual.indexOf("</trkseg>");
             String parseInfo = actual.substring(startIndex + 8,endIndex);
-            String[] split = parseInfo.split("<trkpt");
-            for (int i=0; i<split.length; i++) {
-                System.out.println(split[i]);
+
+            String[] trackPointInfo = parseInfo.split("<trkpt");
+            System.out.println(trackPointInfo[1]);
+
+            for(int i = 1; i < trackPointInfo.length; i++) {
+                int startLat = trackPointInfo[i].indexOf("lat=");
+                int endLat = trackPointInfo[i].indexOf("lon");
+                String latitude = trackPointInfo[i].substring(startLat + 5, endLat - 2);
+                System.out.println(latitude);
             }
+
+            for(int i = 1; i < trackPointInfo.length; i++) {
+                int startLong = trackPointInfo[i].indexOf("lon=");
+                int endLong = trackPointInfo[i].indexOf(">");
+                String longitude = trackPointInfo[i].substring(startLong + 5, endLong - 1);
+                System.out.println(longitude);
+            }
+
+            for(int i = 1; i < trackPointInfo.length; i++) {
+                int startEle = trackPointInfo[i].indexOf("<ele>");
+                int endEle = trackPointInfo[i].indexOf("</ele>");
+                String elevation = trackPointInfo[i].substring(startEle + 5, endEle);
+                System.out.println(elevation);
+            }
+
+            for(int i = 1; i < trackPointInfo.length; i++) {
+                int startTime = trackPointInfo[i].indexOf("<time>");
+                int endTime = trackPointInfo[i].indexOf("</time>");
+                String timeStamp = trackPointInfo[i].substring(startTime + 6, endTime);
+                System.out.println(timeStamp);
+            }
+
         }
         else {
             System.out.println("The file does not exist.");
