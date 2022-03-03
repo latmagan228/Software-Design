@@ -14,9 +14,18 @@ public class GetFileInfo {
             System.out.println("File size in bytes " + myObj.length());
             Path fileName = Path.of("sample.gpx");
             String actual = Files.readString(fileName);
-            System.out.println(actual);
+
+
+
+            int startIndex = actual.indexOf("<trkseg>");
+            int endIndex = actual.indexOf("</trkseg>");
+            String parseInfo = actual.substring(startIndex + 8,endIndex);
+
+            System.out.println(parseInfo);
+
         } else {
             System.out.println("The file does not exist.");
         }
     }
+
 }
