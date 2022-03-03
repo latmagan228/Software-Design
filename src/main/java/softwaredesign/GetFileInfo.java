@@ -15,15 +15,15 @@ public class GetFileInfo {
             Path fileName = Path.of("sample.gpx");
             String actual = Files.readString(fileName);
 
-
-
             int startIndex = actual.indexOf("<trkseg>");
             int endIndex = actual.indexOf("</trkseg>");
             String parseInfo = actual.substring(startIndex + 8,endIndex);
-
-            System.out.println(parseInfo);
-
-        } else {
+            String[] split = parseInfo.split("<trkpt");
+            for (int i=0; i<split.length; i++) {
+                System.out.println(split[i]);
+            }
+        }
+        else {
             System.out.println("The file does not exist.");
         }
     }
