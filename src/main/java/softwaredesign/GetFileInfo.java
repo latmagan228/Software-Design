@@ -17,7 +17,7 @@ public class GetFileInfo {
             String actual = Files.readString(fileName);
             System.out.println(actual);
         } else {
-            System.out.println("The file does not existt.");
+            System.out.println("The file does not exist.");
         }
     }
 }
