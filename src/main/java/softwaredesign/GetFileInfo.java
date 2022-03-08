@@ -18,6 +18,7 @@ public class GetFileInfo {
             System.out.println("Writeable: " + myObj.canWrite());
             System.out.println("Readable " + myObj.canRead());
             System.out.println("File size in bytes " + myObj.length());
+            System.out.println();
             Path fileName = Path.of("sample.gpx");
             String actual = Files.readString(fileName);
 
@@ -27,13 +28,12 @@ public class GetFileInfo {
 
             String[] trackPointInfo = parseInfo.split("<trkpt");
 
-            for(int i = 1; i < trackPointInfo.length; i++) {
+             for(int i = 1; i < trackPointInfo.length; i++) {
                 int startLat = trackPointInfo[i].indexOf("lat=");
                 int endLat = trackPointInfo[i].indexOf("lon");
                 String latitudeString = trackPointInfo[i].substring(startLat + 5, endLat - 2);
                 double latitude = Double.parseDouble(latitudeString);
                 latitudes.add(latitude);
-                System.out.println(latitude);
             }
 
             for(int i = 1; i < trackPointInfo.length; i++) {
@@ -42,7 +42,6 @@ public class GetFileInfo {
                 String longitudeString = trackPointInfo[i].substring(startLong + 5, endLong - 1);
                 double longitude = Double.parseDouble(longitudeString);
                 longitudes.add(longitude);
-                System.out.println(longitude);
             }
 
             for(int i = 1; i < trackPointInfo.length; i++) {
@@ -51,7 +50,6 @@ public class GetFileInfo {
                 String elevationString = trackPointInfo[i].substring(startEle + 5, endEle);
                 double elevation = Double.parseDouble(elevationString);
                 elevations.add(elevation);
-                System.out.println(elevation);
             }
 
             for(int i = 1; i < trackPointInfo.length; i++) {
@@ -59,7 +57,6 @@ public class GetFileInfo {
                 int endTime = trackPointInfo[i].indexOf("</time>");
                 String timeStamp = trackPointInfo[i].substring(startTime + 6, endTime);
                 timeStamps.add(timeStamp);
-                System.out.println(timeStamp);
             }
 
         }
@@ -67,12 +64,17 @@ public class GetFileInfo {
             System.out.println("The file does not exist.");
         }
 
-        for (int i = 1; i < latitudes.size(); i++ ){
-            System.out.println("This is the waypoint number: ");
-            System.out.print(i);
-            System.out.println();
-            System.out.println("Latitude: ");
-            System.out.print(latitudes.elementAt(i));
+        for (int i = 0; i < latitudes.size(); i++ ){
+            System.out.print("Waypoint: ");
+            System.out.println(i + 1);
+            System.out.print("Latitude: ");
+            System.out.print(latitudes.elementAt(i) + " ");
+            System.out.print("Longitude: ");
+            System.out.print(longitudes.elementAt(i) + " ");
+            System.out.print("Elevation: ");
+            System.out.print(elevations.elementAt(i) + " ");
+            System.out.print("Time stamp: ");
+            System.out.println(timeStamps.elementAt(i) + " ");
         }
     }
 
