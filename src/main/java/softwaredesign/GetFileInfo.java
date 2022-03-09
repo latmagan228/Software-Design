@@ -8,7 +8,7 @@ import java.util.*;
 public class GetFileInfo {
     public static void main (String[] args) throws IOException{
         File myObj = new File("sample.gpx");
-        Vector<Double> latitudes = new Vector<Double>();
+        Vector<Double> lotitudes = new Vector<Double>();
         Vector<Double> longitudes = new Vector<Double>();
         Vector<Double> elevations = new Vector<Double>();
         Vector<String> timeStamps = new Vector<String>();
