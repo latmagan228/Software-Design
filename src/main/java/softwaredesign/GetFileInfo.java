@@ -6,9 +6,10 @@ import java.io.IOException;
 import java.util.*;
 
 public class GetFileInfo {
-    public static void main (String[] args) throws IOException{
+
+    public void ReadFile() throws IOException {
         File myObj = new File("sample.gpx");
-        Vector<Double> lotitudes = new Vector<Double>();
+        Vector<Double> latitudes = new Vector<Double>();
         Vector<Double> longitudes = new Vector<Double>();
         Vector<Double> elevations = new Vector<Double>();
         Vector<String> timeStamps = new Vector<String>();
@@ -28,7 +29,7 @@ public class GetFileInfo {
 
             String[] trackPointInfo = parseInfo.split("<trkpt");
 
-             for(int i = 1; i < trackPointInfo.length; i++) {
+            for(int i = 1; i < trackPointInfo.length; i++) {
                 int startLat = trackPointInfo[i].indexOf("lat=");
                 int endLat = trackPointInfo[i].indexOf("lon");
                 String latitudeString = trackPointInfo[i].substring(startLat + 5, endLat - 2);
@@ -60,6 +61,7 @@ public class GetFileInfo {
             }
 
         }
+
         else {
             System.out.println("The file does not exist.");
         }
@@ -77,5 +79,6 @@ public class GetFileInfo {
             System.out.println(timeStamps.elementAt(i) + " ");
         }
     }
+
 
 }
