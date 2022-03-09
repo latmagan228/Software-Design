@@ -7,10 +7,6 @@ import java.util.Vector;
 public class FileStatus {
     public void FileInfo() throws IOException {
         File myObj = new File("sample.gpx");
-        Vector<Double> latitudes = new Vector<Double>();
-        Vector<Double> longitudes = new Vector<Double>();
-        Vector<Double> elevations = new Vector<Double>();
-        Vector<String> timeStamps = new Vector<String>();
 
         if (myObj.exists()) {
             System.out.println("File name: " + myObj.getName());

@@ -6,14 +6,12 @@ import java.io.IOException;
 import java.util.*;
 
 public class FileInfo {
+    Vector<Double> latitudes = new Vector<Double>();
+    Vector<Double> longitudes = new Vector<Double>();
+    Vector<Double> elevations = new Vector<Double>();
+    Vector<String> timeStamps = new Vector<String>();
 
     public void ReadFile() throws IOException {
-        File myObj = new File("sample.gpx");
-        Vector<Double> latitudes = new Vector<Double>();
-        Vector<Double> longitudes = new Vector<Double>();
-        Vector<Double> elevations = new Vector<Double>();
-        Vector<String> timeStamps = new Vector<String>();
-
         Path fileName = Path.of("sample.gpx");
         String actual = Files.readString(fileName);
 
@@ -53,19 +51,17 @@ public class FileInfo {
             String timeStamp = trackPointInfo[i].substring(startTime + 6, endTime);
             timeStamps.add(timeStamp);
         }
-
-
-        for (int i = 0; i < latitudes.size(); i++ ){
-            System.out.print("Waypoint: ");
-            System.out.println(i + 1);
-            System.out.print("Latitude: ");
-            System.out.print(latitudes.elementAt(i) + " ");
-            System.out.print("Longitude: ");
-            System.out.print(longitudes.elementAt(i) + " ");
-            System.out.print("Elevation: ");
-            System.out.print(elevations.elementAt(i) + " ");
-            System.out.print("Time stamp: ");
-            System.out.println(timeStamps.elementAt(i) + " ");
-        }
+    }
+    Vector GetLatitude() {
+        return latitudes;
+    }
+    Vector GetLongitude() {
+        return longitudes;
+    }
+    Vector GetElevation() {
+        return elevations;
+    }
+    Vector GetTimestamp() {
+        return timeStamps;
     }
 }
