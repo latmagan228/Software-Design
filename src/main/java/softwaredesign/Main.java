@@ -8,6 +8,8 @@ import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        FileStatus fileStatus = new FileStatus();
+        fileStatus.FileInfo();
         GetFileInfo getFileInfo = new GetFileInfo();
         getFileInfo.ReadFile();
     }
