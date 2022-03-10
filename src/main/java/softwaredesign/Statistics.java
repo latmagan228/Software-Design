@@ -14,7 +14,7 @@ public class Statistics {
          double latDistance = 0;
          double lonDistance = 0;
          double a = 0;
-         double c = 0;
+         double b = 0;
          double distance = 0;
          double height = 0;
 
@@ -26,8 +26,8 @@ public class Statistics {
                       Math.cos(Math.toRadians(latitudes.get(i))) * Math.cos(Math.toRadians(latitudes.get(i + 1))) *
                               Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
 
-             c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-             distance = R * c * 1000;
+             b = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+             distance = R * b * 1000;
              height = elevations.get(i) - elevations.get(i + 1);
              distance = Math.pow(distance, 2) + Math.pow(height, 2);
 
