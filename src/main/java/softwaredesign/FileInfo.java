@@ -11,6 +11,7 @@ public class FileInfo {
     Vector<Double> elevations = new Vector<Double>();
     Vector<String> timeStamps = new Vector<String>();
 
+
     public void ReadFile() throws IOException {
         Path fileName = Path.of("sample.gpx");
         String actual = Files.readString(fileName);

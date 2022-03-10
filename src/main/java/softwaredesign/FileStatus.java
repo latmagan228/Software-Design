@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Vector;
 
 public class FileStatus {
-    public void FileInfo() throws IOException {
+    public void CheckStatus() throws IOException {
         File myObj = new File("sample.gpx");
 
         if (myObj.exists()) {

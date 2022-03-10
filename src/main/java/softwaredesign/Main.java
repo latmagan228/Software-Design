@@ -10,10 +10,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         FileStatus fileStatus = new FileStatus();
-        fileStatus.FileInfo();
-
+        fileStatus.CheckStatus();
         FileInfo fileInfo = new FileInfo();
         fileInfo.ReadFile();
+
         Vector<Double> latitudes = fileInfo.GetLatitude();
         Vector<Double> longitudes = fileInfo.GetLongitude();
         Vector<Double> elevations = fileInfo.GetElevation();
@@ -31,7 +31,9 @@ public class Main {
             System.out.print("Time stamp: ");
             System.out.println(timeStamps.elementAt(i) + " ");
         }
+
     }
+
 }
 
 
