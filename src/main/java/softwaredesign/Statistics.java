@@ -1,21 +1,23 @@
 package softwaredesign;
-import java.util.Vector;
+import java.util.ArrayList;
 
-public class Statistics {
 
-    FileInfo polla = new FileInfo();
-    Vector<Double> latitudess = polla.GetLatitude();
-    Vector<Double> longitudess = polla.GetLongitude();
-    Vector<Double> elevationss = polla.GetElevation();
+public final class Statistics {
 
-    double lat1 = latitudess.elementAt(0);
-    double lat2 = latitudess.elementAt(1);
-    double lon1 = longitudess.elementAt(0);
-    double lon2 = longitudess.elementAt(1);
-    double el1 = elevationss.elementAt(0);
-    double el2 = elevationss.elementAt(1);
+    public  void totalDistance() {
 
-    public void totalDistance() {
+        FileInfo fileInfo = new FileInfo();
+        ArrayList<Double> latitudes = fileInfo.GetLatitude();
+        ArrayList<Double>  longitudes = fileInfo.GetLongitude();
+        ArrayList<Double>  elevations = fileInfo.GetElevation();
+
+        double lat1 = latitudes.get(0);
+        double lat2 = latitudes.get(1);
+        double lon1 = longitudes.get(0);
+        double lon2 = longitudes.get(1);
+        double el1 = elevations.get(0);
+        double el2 = elevations.get(1);
+
         final int R = 6371;
 
         double latDistance = Math.toRadians(lat2 - lat1);

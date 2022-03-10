@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.*;
 
 public class FileInfo {
-    Vector<Double> latitudes = new Vector<Double>();
-    Vector<Double> longitudes = new Vector<Double>();
-    Vector<Double> elevations = new Vector<Double>();
-    Vector<String> timeStamps = new Vector<String>();
+    ArrayList<Double> latitudes = new ArrayList<Double>();
+    ArrayList<Double> longitudes = new ArrayList<Double>();
+    ArrayList<Double> elevations = new ArrayList<Double>();
+    ArrayList<String> timeStamps = new ArrayList<String>();
 
 
     public void ReadFile() throws IOException {
@@ -52,17 +52,18 @@ public class FileInfo {
             String timeStamp = trackPointInfo[i].substring(startTime + 6, endTime);
             timeStamps.add(timeStamp);
         }
+
     }
-    Vector GetLatitude() {
+    ArrayList<Double> GetLatitude() {
         return latitudes;
     }
-    Vector GetLongitude() {
+    ArrayList<Double> GetLongitude() {
         return longitudes;
     }
-    Vector GetElevation() {
+    ArrayList<Double> GetElevation() {
         return elevations;
     }
-    Vector GetTimestamp() {
+    ArrayList<String> GetTimestamp() {
         return timeStamps;
     }
 }
