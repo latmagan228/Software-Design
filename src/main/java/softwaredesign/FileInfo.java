@@ -5,14 +5,14 @@ import java.nio.file.Path;
 import java.io.IOException;
 import java.util.*;
 
-public class FileInfo {
-    ArrayList<Double> latitudes = new ArrayList<Double>();
-    ArrayList<Double> longitudes = new ArrayList<Double>();
-    ArrayList<Double> elevations = new ArrayList<Double>();
-    ArrayList<String> timeStamps = new ArrayList<String>();
+ public  class  FileInfo {
 
+     static  ArrayList<ArrayList<Double>> ReadFile() throws IOException {
+        ArrayList<Double> latitudes = new ArrayList<Double>();
+        ArrayList<Double> longitudes = new ArrayList<Double>();
+        ArrayList<Double> elevations = new ArrayList<Double>();
+        ArrayList<String> timeStamps = new ArrayList<String>();
 
-    public void ReadFile() throws IOException {
         Path fileName = Path.of("sample.gpx");
         String actual = Files.readString(fileName);
 
@@ -46,24 +46,18 @@ public class FileInfo {
             elevations.add(elevation);
         }
 
-        for (int i = 1; i < trackPointInfo.length; i++) {
-            int startTime = trackPointInfo[i].indexOf("<time>");
-            int endTime = trackPointInfo[i].indexOf("</time>");
-            String timeStamp = trackPointInfo[i].substring(startTime + 6, endTime);
-            timeStamps.add(timeStamp);
-        }
+         for (int i = 1; i < trackPointInfo.length; i++) {
+             int startTime = trackPointInfo[i].indexOf("<time>");
+             int endTime = trackPointInfo[i].indexOf("</time>");
+             String timeStamp = trackPointInfo[i].substring(startTime + 6, endTime);
+         }
+
+        ArrayList<ArrayList<Double>> waypoint = new ArrayList<>();
+        waypoint.add(latitudes);
+        waypoint.add(longitudes);
+        waypoint.add(elevations);
+
+        return waypoint;
 
     }
-    ArrayList<Double> GetLatitude() {
-        return latitudes;
-    }
-    ArrayList<Double> GetLongitude() {
-        return longitudes;
-    }
-    ArrayList<Double> GetElevation() {
-        return elevations;
-    }
-    ArrayList<String> GetTimestamp() {
-        return timeStamps;
-    }
-}
+ }

@@ -1,36 +1,41 @@
 package softwaredesign;
+import java.io.IOException;
 import java.util.ArrayList;
 
+public class Statistics {
 
-public final class Statistics {
+     static void totalDistance() throws IOException {
+        ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
+        ArrayList<Double>  longitudes = FileInfo.ReadFile().get(1);
+        ArrayList<Double>  elevations = FileInfo.ReadFile().get(2);
 
-    public  void totalDistance() {
+         final int R = 6371;
+         double d = 0;
+         double latDistance = 0;
+         double lonDistance = 0;
+         double a = 0;
+         double c = 0;
+         double distance = 0;
+         double height = 0;
 
-        FileInfo fileInfo = new FileInfo();
-        ArrayList<Double> latitudes = fileInfo.GetLatitude();
-        ArrayList<Double>  longitudes = fileInfo.GetLongitude();
-        ArrayList<Double>  elevations = fileInfo.GetElevation();
+         for (int i = 0; i < latitudes.size() - 1; i++) {
+             latDistance = Math.toRadians(latitudes.get(i + 1) - latitudes.get(i));
+             lonDistance = Math.toRadians(longitudes.get(i + 1) - longitudes.get(i));
 
-        double lat1 = latitudes.get(0);
-        double lat2 = latitudes.get(1);
-        double lon1 = longitudes.get(0);
-        double lon2 = longitudes.get(1);
-        double el1 = elevations.get(0);
-        double el2 = elevations.get(1);
+             a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2) +
+                      Math.cos(Math.toRadians(latitudes.get(i))) * Math.cos(Math.toRadians(latitudes.get(i + 1))) *
+                              Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
 
-        final int R = 6371;
+             c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+             distance = R * c * 1000;
+             height = elevations.get(i) - elevations.get(i + 1);
+             distance = Math.pow(distance, 2) + Math.pow(height, 2);
 
-        double latDistance = Math.toRadians(lat2 - lat1);
-        double lonDistance = Math.toRadians(lon2 - lon1);
-        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2) +
-                Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
-                        Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
-        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        double distance = R * c * 1000;
-        double height = el1 - el2;
-        distance = Math.pow(distance, 2) + Math.pow(height, 2);
+             d = Math.sqrt(distance) + d;
+         }
+         System.out.println();
+         System.out.println("The total distance of the track is: " + d + " meters.");
+     }
 
-        double d = Math.sqrt(distance);
-        System.out.println(d);
-    }
 }
+

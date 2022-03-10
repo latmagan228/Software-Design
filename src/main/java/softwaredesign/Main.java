@@ -5,21 +5,17 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Vector;
+
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
         FileStatus fileStatus = new FileStatus();
         fileStatus.CheckStatus();
-        FileInfo fileInfo = new FileInfo();
-        fileInfo.ReadFile();
 
-        ArrayList<Double> latitudes = fileInfo.GetLatitude();
-        ArrayList<Double>  longitudes = fileInfo.GetLongitude();
-        ArrayList<Double>  elevations = fileInfo.GetElevation();
-        ArrayList<String>  timeStamps = fileInfo.GetTimestamp();
-
+        ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
+        ArrayList<Double> longitudes = FileInfo.ReadFile().get(1);
+        ArrayList<Double> elevations = FileInfo.ReadFile().get(2);
 
         for (int i = 0; i < latitudes.size(); i++) {
             System.out.print("Waypoint: ");
@@ -30,12 +26,10 @@ public class Main {
             System.out.print(longitudes.get(i) + " ");
             System.out.print("Elevation: ");
             System.out.print(elevations.get(i) + " ");
-            System.out.print("Time stamp: ");
-            System.out.println(timeStamps.get(i) + " ");
+            System.out.println();
         }
-
+        Statistics.totalDistance();
     }
-
 }
 
 
