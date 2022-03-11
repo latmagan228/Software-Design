@@ -6,7 +6,7 @@ import java.util.Vector;
 
 public class FileStatus {
     public void CheckStatus() throws IOException {
-        File myObj = new File("sample.gpx");
+        File myObj = new File("sample1.gpx");
 
         if (myObj.exists()) {
             System.out.println("File name: " + myObj.getName());
