@@ -13,7 +13,7 @@ import java.util.*;
         ArrayList<Double> elevations = new ArrayList<Double>();
         ArrayList<String> timeStamps = new ArrayList<String>();
 
-        Path fileName = Path.of("sample.gpx");
+        Path fileName = Path.of("sample1.gpx");
         String actual = Files.readString(fileName);
 
         int startIndex = actual.indexOf("<trkseg>");
