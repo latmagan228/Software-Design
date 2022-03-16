@@ -1,0 +1,27 @@
+GliTtime.example.gpx++
+
+<2xml versior
+<opx
+version="1.1"
+creator="Runkeeper — http: //ww.runkeeper.com"
+amlns:xsi="http: //wns.w3.org/2001/XMLSchema-instance".
+amlns="http: //wnw.topografix.com/GPX/1/1%
+:chemaLocation="http: //wmw.topografix.com/GPX/1/1 http: //wn.topografix.com/GPX/1/1/9px.x80"
+amlns:gpxtpa="http: //wnw.garmin.com/amlschemas/TrackPointExtension/v1">
+1.0" encoding="UTE-8"2>
+<>
+<name><! [CDATA [Running 3/24/12 11:12 am] ]></name>
+<time>2012-03-24706:12:452</time>
+
+<trkseg>
+<trkpt lat="35.193915000" lon="-97.440306000"><ele>358.3</ele><time>2012-03-24T06:12:45Z</time>
+<extensions><gpxtpx:TrackPointExtension> <gpxtpx:hr>72</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+<trkpt lat="35.193899000" lon="-97.440258000"><ele>358.3</ele><time>2012-03-24T06:13:48Z</time>
+<extensions><gpstps:TrackPointExtension><gpxtpa:hr>72</gpxtpa:hr></gpxtpa:TrackPointExtension></extensions></trkpt>
+(many more track points removed for brevity)
+<trkpt lat="35.229343000" lon="-97.487682000"><ele>358.0</ele><time>2012-03-24T08:33:42Z</time>
+<extensions><gpstpa:TrackPointEstension><gpxtp:hr>162</gpxtpa:hr></gpxtpa:TrackPointExtension></extensions></trkpt>
+</trkseg>
+
+</o
+</apx>

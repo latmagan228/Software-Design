@@ -7,14 +7,18 @@ import java.util.*;
 
 public  class  FileInfo {
 
-    static  ArrayList<ArrayList<Double>> ReadFile() throws IOException {
+    static String GpxString() throws IOException {
+        Path fileName = Path.of("sample1.gpx");
+        String actual = Files.readString(fileName);
+
+        return actual;
+    }
+
+    static ArrayList<ArrayList<Double>> ReadFile() throws IOException {
         ArrayList<Double> latitudes = new ArrayList<Double>();
         ArrayList<Double> longitudes = new ArrayList<Double>();
         ArrayList<Double> elevations = new ArrayList<Double>();
-        ArrayList<String> timeStamps = new ArrayList<String>();
-
-        Path fileName = Path.of("sample1.gpx");
-        String actual = Files.readString(fileName);
+        String actual = FileInfo.GpxString();
 
         int startIndex = actual.indexOf("<trkseg>");
         int endIndex = actual.indexOf("</trkseg>");

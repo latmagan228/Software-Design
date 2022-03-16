@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Statistics {
 
-    static void totalDistance() throws IOException {
+    static Double totalDistance() throws IOException {
         ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
         ArrayList<Double>  longitudes = FileInfo.ReadFile().get(1);
         ArrayList<Double>  elevations = FileInfo.ReadFile().get(2);
@@ -33,8 +33,52 @@ public class Statistics {
 
             d = Math.sqrt(distance) + d;
         }
-        System.out.println();
-        System.out.println("The total distance of the track is: " + d + " meters.");
+        return  d;
     }
 
+    static Integer totalTime() throws IOException {
+        ArrayList<String> time = Calendar.Time();
+        ArrayList<Integer> hour = new ArrayList<Integer>();
+        ArrayList<Integer> minute = new ArrayList<Integer>();
+        ArrayList<Integer> second = new ArrayList<Integer>();
+        Integer starTime;
+        Integer totalTime;
+        Integer timeDifference;
+
+        for (int i = 0; i < time.size(); i++) {
+            int startHour = time.get(i).indexOf("T");
+            int endHour = 0;
+            String hourStamp = time.get(i).substring(startHour + 1, endHour + 3);
+            String minuteStamp = time.get(i).substring(startHour + 4, endHour + 6);
+            String secondStamp = time.get(i).substring(startHour + 7, endHour + 9);
+            int hours = Integer.parseInt(hourStamp);
+            int minutes = Integer.parseInt(minuteStamp);
+            int seconds = Integer.parseInt(secondStamp);
+            hour.add(hours);
+            minute.add(minutes);
+            second.add(seconds);
+        }
+
+        starTime = hour.get(0) * 3600 + minute.get(0) * 60 + second.get(0);
+        totalTime = hour.get(hour.size() - 1) * 3600 + minute.get(hour.size() - 1) * 60 + second.get(hour.size() - 1);
+        timeDifference = totalTime - starTime;
+
+        return timeDifference;
+    }
+
+    static Double averageSpeed() throws IOException {
+        double totalTime = Statistics.totalTime();
+        double totalDistance = Statistics.totalDistance();
+        double speed;
+
+        speed = (totalDistance / 1000) / (totalTime / 3600);
+        return speed;
+    }
+
+    static Double altitudeDifference() throws IOException {
+        ArrayList<Double> elevations = FileInfo.ReadFile().get(2);
+
+        Double elevationDifference = elevations.get(elevations.size() - 1) - elevations.get(0);
+        return elevationDifference;
+    }
 }

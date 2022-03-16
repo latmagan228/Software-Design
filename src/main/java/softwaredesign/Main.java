@@ -11,10 +11,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
         FileStatus fileStatus = new FileStatus();
         fileStatus.CheckStatus();
-
         ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
         ArrayList<Double> longitudes = FileInfo.ReadFile().get(1);
         ArrayList<Double> elevations = FileInfo.ReadFile().get(2);
+        String day = Calendar.Date();
 
         for (int i = 0; i < latitudes.size(); i++) {
             System.out.print("Waypoint: ");
@@ -27,6 +27,30 @@ public class Main {
             System.out.print(elevations.get(i) + " ");
             System.out.println();
         }
-        Statistics.totalDistance();
+
+        System.out.println();
+        System.out.println("Day: " + day);
+        System.out.println();
+
+        System.out.println("The total distance of the track is: ");
+        System.out.println(Statistics.totalDistance() + " meters.");
+        System.out.println();
+
+        Integer timeDifference = Statistics.totalTime();
+        Integer totalHours = timeDifference / 3600;
+        Integer totalMinutes = (timeDifference / 60) % 60;
+
+        System.out.println("The total time completed of the track is: ");
+        System.out.print(totalHours + " hours, ");
+        System.out.print(totalMinutes + " minutes, ");
+        System.out.println(timeDifference % 60 + " seconds.");
+        System.out.println();
+
+        System.out.println("The average speed is: ");
+        System.out.println(Statistics.averageSpeed() + " Km/h");
+        System.out.println();
+
+        System.out.println("The elevation difference of the track is: ");
+        System.out.println(Statistics.altitudeDifference() + " meters");
     }
 }

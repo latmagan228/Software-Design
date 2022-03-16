@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-
-<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" creator="Oregon 400t" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" creator="mapstogpx.com" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
   <metadata>
-    <link href="http://www.garmin.com">
-      <text>Garmin International</text>
+    <link href="http://www.mapstogpx.com">
+      <text>Sverrir Sigmundarson</text>
     </link>
-    <time>2009-10-17T22:58:43Z</time>
+    <!--desc>Map data ©️2022</desc-->
+    <!--copyright author="Google Inc">
+    	<year>2022</year>
+    	<license>https://developers.google.com/maps/terms</license>
+    </copyright-->
+    <!--url>https://www.google.co.uk/maps/dir/Anne Frank Huis, Westermarkt, Ámsterdam/Universidad Libre de Ámsterdam, De Boelelaan 1105, 1081 HV Amsterdam/@52.3544489,4.8356436,13z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c609c5213e1149:0xd49a5d653e635b0a!2m2!1d4.8839503!2d52.3752103!1m5!1m1!1s0x47c60a085c443af1:0x2df2d7a997eccd84!2m2!1d4.8657199!2d52.3337568!3e1?hl=en</url-->
+    <time>2022-03-16T17:18:05Z</time>
   </metadata>
-  <trk>
-    <name>Example GPX Document</name>
-    <trkseg>
-      <trkpt lat="47.644548" lon="-122.326897">
-        <ele>4.46</ele>
-        <time>2009-10-17T18:37:26Z</time>
+  <wpt lat="52.3752103" lon="4.8839503">
+    <name>Anne Frank Huis</name>
+    <desc>Anne Frank House, Westermarkt 20, 1016 GV Amsterdam, Netherlands</desc>
+  </wpt>
+  <wpt lat="52.3337568" lon="4.8657199">
+    <name>Vrije Universiteit Amsterdam     </name>
+    <desc>Vrije Universiteit Amsterdam, De Boelelaan 1105, 1081 HV Amsterdam, Netherlands</desc>
+  </wpt>
+<trk>
+  <name>Anne Frank Huis to Vrije Universiteit Amsterdam</name>
+  <number>1</number>
+  <trkseg>
+      <trkpt lat="52.3752362" lon="4.883876"><ele>524</ele><time>2021-10-14T10:09:34Z</time>
+         <name>TP001</name>
       </trkpt>
-      <trkpt lat="47.644548" lon="-122.326897">
-        <ele>4.94</ele>
-        <time>2009-10-17T18:37:31Z</time>
+      <trkpt lat="52.36834" lon="4.87639"><ele>524</ele><time>2021-10-14T10:13:57Z</time>
+          <name>TP094</name>
       </trkpt>
-      <trkpt lat="47.644548" lon="-122.326897">
-        <ele>6.87</ele>
-        <time>2009-10-17T18:37:34Z</time>
+      <trkpt lat="52.36146" lon="4.87614"><ele>525</ele><time>2021-10-14T10:18:02Z</time>
+        <name>TP187</name>
       </trkpt>
-    </trkseg>
-  </trk>
-</gpx>
+      <trkpt lat="52.35402" lon="4.87318"><ele>527</ele><time>2021-10-14T10:23:43Z</time>
+         <name>TP275</name>
+      </trkpt>
+      <trkpt lat="52.34143" lon="4.86827"><ele>525</ele><time>2021-10-14T10:27:24Z</time>
+         <name>TP384</name>
+      </trkpt>
+      <trkpt lat="52.3337544" lon="4.8657326"><ele>529</ele><time>2021-10-14T10:32:46Z</time>
+         <name>TP444</name>
+      </trkpt>
+  </trkseg>
