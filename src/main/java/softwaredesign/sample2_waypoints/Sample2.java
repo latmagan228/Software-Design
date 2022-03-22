@@ -26,8 +26,6 @@ public class Sample2
         ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
         ArrayList<Double> longitudes = FileInfo.ReadFile().get(1);
         ArrayList<GeoPosition> trackPoints = new ArrayList<GeoPosition>();
-        Set<Waypoint> waypoints = new HashSet<Waypoint>();
-        HashSet<DefaultWaypoint> h = new HashSet<DefaultWaypoint>();
 
         // Display the viewer in a JFrame
         JFrame frame = new JFrame("JXMapviewer2 Example 2");
@@ -60,12 +58,10 @@ public class Sample2
         mapViewer.zoomToBestFit(new HashSet<GeoPosition>(track), 0.7);
 
         // Create waypoints from the geo-positions
-        for (int i = 0; i < trackPoints.size(); i++) {
 
-            waypoints = new HashSet<Waypoint>(Arrays.asList(
-                    new DefaultWaypoint(trackPoints.get(0)),
-                    new DefaultWaypoint(trackPoints.get(trackPoints.size() - 1))));
-        }
+        Set<Waypoint> waypoints = new HashSet<Waypoint>(Arrays.asList(
+                new DefaultWaypoint(trackPoints.get(0)),
+                new DefaultWaypoint(trackPoints.get(trackPoints.size() - 1))));
 
         // Create a waypoint painter that takes all the waypoints
         WaypointPainter<Waypoint> waypointPainter = new WaypointPainter<Waypoint>();
