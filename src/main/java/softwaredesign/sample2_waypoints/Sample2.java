@@ -61,11 +61,10 @@ public class Sample2
 
         // Create waypoints from the geo-positions
         for (int i = 0; i < trackPoints.size(); i++) {
-            DefaultWaypoint a = trackPoints.get(i);
-            h.add();
 
             waypoints = new HashSet<Waypoint>(Arrays.asList(
-                    new DefaultWaypoint(trackPoints.get(i))));
+                    new DefaultWaypoint(trackPoints.get(0)),
+                    new DefaultWaypoint(trackPoints.get(trackPoints.size() - 1))));
         }
 
         // Create a waypoint painter that takes all the waypoints
