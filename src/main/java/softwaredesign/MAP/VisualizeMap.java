@@ -1,4 +1,4 @@
-package softwaredesign.sample2_waypoints;
+package softwaredesign.MAP;
 
 import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.OSMTileFactoryInfo;
@@ -11,17 +11,10 @@ import javax.swing.*;
 import java.io.IOException;
 import java.util.*;
 
-/**
- * A simple sample application that shows
- * a OSM map of Europe containing a route with waypoints
- * @author Martin Steiger
- */
-public class Sample2
-{
-    /**
-     * @param args the program args (ignored)
-     */
-    public static void main(String[] args) throws IOException {
+
+public class VisualizeMap {
+
+    public static void visualizeGPX () throws IOException {
         JXMapViewer mapViewer = new JXMapViewer();
         ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
         ArrayList<Double> longitudes = FileInfo.ReadFile().get(1);
@@ -44,11 +37,6 @@ public class Sample2
             trackPoints.add(waypoint);
         }
 
-        GeoPosition frankfurt = new GeoPosition(latitudes.get(0), longitudes.get(0));
-        GeoPosition wiesbaden = new GeoPosition(50,  5, 0, 8, 14, 0);
-        GeoPosition mainz     = new GeoPosition(50,  0, 0, 8, 16, 0);
-        GeoPosition darmstadt = new GeoPosition(49, 52, 0, 8, 39, 0);
-        GeoPosition offenbach = new GeoPosition(50,  6, 0, 8, 46, 0);
 
         // Create a track from the geo-positions
         List<GeoPosition> track = trackPoints;

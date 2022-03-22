@@ -1,5 +1,5 @@
 
-package softwaredesign.sample2_waypoints;
+package softwaredesign.MAP;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

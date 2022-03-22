@@ -27,7 +27,7 @@ public class ShowStats extends JFrame{
 
         this.setContentPane(this.panelMain);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocation(400,150);
+        this.setLocation(600,150);
         this.pack();
         this.setVisible(true);
 
