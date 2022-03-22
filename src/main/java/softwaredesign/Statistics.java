@@ -6,8 +6,8 @@ public class Statistics {
 
     static public Double totalDistance() throws IOException {
         ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
-        ArrayList<Double>  longitudes = FileInfo.ReadFile().get(1);
-        ArrayList<Double>  elevations = FileInfo.ReadFile().get(2);
+        ArrayList<Double> longitudes = FileInfo.ReadFile().get(1);
+        ArrayList<Double> elevations = FileInfo.ReadFile().get(2);
 
         final int R = 6371;
         double d = 0;
