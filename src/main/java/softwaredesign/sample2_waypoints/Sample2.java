@@ -1,24 +1,15 @@
 package softwaredesign.sample2_waypoints;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import javax.swing.JFrame;
-
 import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.OSMTileFactoryInfo;
 import org.jxmapviewer.painter.CompoundPainter;
 import org.jxmapviewer.painter.Painter;
-import org.jxmapviewer.viewer.DefaultTileFactory;
-import org.jxmapviewer.viewer.DefaultWaypoint;
-import org.jxmapviewer.viewer.GeoPosition;
-import org.jxmapviewer.viewer.TileFactoryInfo;
-import org.jxmapviewer.viewer.Waypoint;
-import org.jxmapviewer.viewer.WaypointPainter;
+import org.jxmapviewer.viewer.*;
 import softwaredesign.FileInfo;
+
+import javax.swing.*;
+import java.io.IOException;
+import java.util.*;
 
 /**
  * A simple sample application that shows
@@ -30,9 +21,10 @@ public class Sample2
     /**
      * @param args the program args (ignored)
      */
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws IOException {
         JXMapViewer mapViewer = new JXMapViewer();
+        ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
+        ArrayList<Double> longitudes = FileInfo.ReadFile().get(1);
 
         // Display the viewer in a JFrame
         JFrame frame = new JFrame("JXMapviewer2 Example 2");
@@ -46,7 +38,7 @@ public class Sample2
         DefaultTileFactory tileFactory = new DefaultTileFactory(info);
         mapViewer.setTileFactory(tileFactory);
 
-        GeoPosition frankfurt = new GeoPosition(FileInfo.Readfile());
+        GeoPosition frankfurt = new GeoPosition(latitudes.get(0), longitudes.get(0));
         GeoPosition wiesbaden = new GeoPosition(50,  5, 0, 8, 14, 0);
         GeoPosition mainz     = new GeoPosition(50,  0, 0, 8, 16, 0);
         GeoPosition darmstadt = new GeoPosition(49, 52, 0, 8, 39, 0);

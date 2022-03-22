@@ -7,13 +7,13 @@ import java.util.*;
 public  class  FileInfo {
 
     static String GpxString() throws IOException {
-        Path fileName = Path.of("sample3.gpx");
+        Path fileName = Path.of("sample1.gpx");
         String actual = Files.readString(fileName);
 
         return actual;
     }
 
-    static ArrayList<ArrayList<Double>> ReadFile() throws IOException {
+    public static ArrayList<ArrayList<Double>> ReadFile() throws IOException {
         ArrayList<Double> latitudes = new ArrayList<Double>();
         ArrayList<Double> longitudes = new ArrayList<Double>();
         ArrayList<Double> elevations = new ArrayList<Double>();
