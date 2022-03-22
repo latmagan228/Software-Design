@@ -25,6 +25,9 @@ public class Sample2
         JXMapViewer mapViewer = new JXMapViewer();
         ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
         ArrayList<Double> longitudes = FileInfo.ReadFile().get(1);
+        ArrayList<GeoPosition> trackPoints = new ArrayList<GeoPosition>();
+        Set<Waypoint> waypoints = new HashSet<Waypoint>();
+        HashSet<DefaultWaypoint> h = new HashSet<DefaultWaypoint>();
 
         // Display the viewer in a JFrame
         JFrame frame = new JFrame("JXMapviewer2 Example 2");
@@ -38,6 +41,11 @@ public class Sample2
         DefaultTileFactory tileFactory = new DefaultTileFactory(info);
         mapViewer.setTileFactory(tileFactory);
 
+        for (int i = 0; i < latitudes.size(); i++) {
+            GeoPosition waypoint = new GeoPosition(latitudes.get(i), longitudes.get(i));
+            trackPoints.add(waypoint);
+        }
+
         GeoPosition frankfurt = new GeoPosition(latitudes.get(0), longitudes.get(0));
         GeoPosition wiesbaden = new GeoPosition(50,  5, 0, 8, 14, 0);
         GeoPosition mainz     = new GeoPosition(50,  0, 0, 8, 16, 0);
@@ -45,19 +53,20 @@ public class Sample2
         GeoPosition offenbach = new GeoPosition(50,  6, 0, 8, 46, 0);
 
         // Create a track from the geo-positions
-        List<GeoPosition> track = Arrays.asList(frankfurt, wiesbaden, mainz, darmstadt, offenbach);
+        List<GeoPosition> track = trackPoints;
         RoutePainter routePainter = new RoutePainter(track);
 
         // Set the focus
         mapViewer.zoomToBestFit(new HashSet<GeoPosition>(track), 0.7);
 
         // Create waypoints from the geo-positions
-        Set<Waypoint> waypoints = new HashSet<Waypoint>(Arrays.asList(
-                new DefaultWaypoint(frankfurt),
-                new DefaultWaypoint(wiesbaden),
-                new DefaultWaypoint(mainz),
-                new DefaultWaypoint(darmstadt),
-                new DefaultWaypoint(offenbach)));
+        for (int i = 0; i < trackPoints.size(); i++) {
+            DefaultWaypoint a = trackPoints.get(i);
+            h.add();
+
+            waypoints = new HashSet<Waypoint>(Arrays.asList(
+                    new DefaultWaypoint(trackPoints.get(i))));
+        }
 
         // Create a waypoint painter that takes all the waypoints
         WaypointPainter<Waypoint> waypointPainter = new WaypointPainter<Waypoint>();
