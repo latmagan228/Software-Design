@@ -33,9 +33,9 @@ public class Main {
         System.out.println(Statistics.totalDistance() + " meters.");
         System.out.println();
 
-        Integer timeDifference = Statistics.totalTime();
-        Integer totalHours = timeDifference / 3600;
-        Integer totalMinutes = (timeDifference / 60) % 60;
+        int timeDifference = Statistics.totalTime();
+        int totalHours = timeDifference / 3600;
+        int totalMinutes = (timeDifference / 60) % 60;
 
         System.out.println("The total time completed of the track is: ");
         System.out.print(totalHours + " hours, ");
