@@ -2,7 +2,6 @@ package softwaredesign;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Vector;
 
 public class FileStatus {
     public void CheckStatus() throws IOException {

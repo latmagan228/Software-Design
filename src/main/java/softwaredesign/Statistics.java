@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Statistics {
 
-    static Double totalDistance() throws IOException {
+    static public Double totalDistance() throws IOException {
         ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
         ArrayList<Double>  longitudes = FileInfo.ReadFile().get(1);
         ArrayList<Double>  elevations = FileInfo.ReadFile().get(2);
@@ -36,8 +36,8 @@ public class Statistics {
         return  d;
     }
 
-    static Integer totalTime() throws IOException {
-        ArrayList<String> time = Calendar.Time();
+    static public Integer totalTime() throws IOException {
+        ArrayList<String> time = Date.Time();
         ArrayList<Integer> hour = new ArrayList<Integer>();
         ArrayList<Integer> minute = new ArrayList<Integer>();
         ArrayList<Integer> second = new ArrayList<Integer>();
@@ -66,7 +66,7 @@ public class Statistics {
         return timeDifference;
     }
 
-    static Double averageSpeed() throws IOException {
+    static public Double averageSpeed() throws IOException {
         double totalTime = Statistics.totalTime();
         double totalDistance = Statistics.totalDistance();
         double speed;
@@ -75,7 +75,7 @@ public class Statistics {
         return speed;
     }
 
-    static Double altitudeDifference() throws IOException {
+    static public Double altitudeDifference() throws IOException {
         ArrayList<Double> elevations = FileInfo.ReadFile().get(2);
 
         Double elevationDifference = elevations.get(elevations.size() - 1) - elevations.get(0);

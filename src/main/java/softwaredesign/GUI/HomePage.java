@@ -3,6 +3,7 @@ package softwaredesign.GUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class HomePage extends JFrame {
 
@@ -16,7 +17,7 @@ public class HomePage extends JFrame {
         super("GPX Manager");
         this.setContentPane(this.panelMain);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocation(400,180);
+        this.setLocation(400,150);
         this.pack();
         this.setVisible(true);
 
@@ -29,10 +30,16 @@ public class HomePage extends JFrame {
         visualizeGPXFileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                 new VisualizeGPX();
+                try {
+                    new ShowStats();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
     }
+
 
     public static void main(String[] args) {
         new HomePage();

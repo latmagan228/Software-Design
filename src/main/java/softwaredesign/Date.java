@@ -1,13 +1,11 @@
 package softwaredesign;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
-public class Calendar {
+public class Date {
 
-    static String Date() throws IOException {
+    static public String Date() throws IOException {
         String actual = FileInfo.GpxString();
 
         int startIndex = actual.indexOf("<trkseg>");

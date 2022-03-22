@@ -1,9 +1,6 @@
 package softwaredesign;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class Main {
@@ -14,7 +11,7 @@ public class Main {
         ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
         ArrayList<Double> longitudes = FileInfo.ReadFile().get(1);
         ArrayList<Double> elevations = FileInfo.ReadFile().get(2);
-        String day = Calendar.Date();
+        String day = Date.Date();
 
         for (int i = 0; i < latitudes.size(); i++) {
             System.out.print("Waypoint: ");

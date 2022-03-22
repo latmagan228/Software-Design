@@ -9,6 +9,7 @@
       <background color="-15"/>
       <enabled value="true"/>
       <foreground color="-15"/>
+      <preferredSize width="700" height="600"/>
     </properties>
     <border type="none"/>
     <children>
