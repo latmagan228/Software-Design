@@ -20,10 +20,10 @@ public class ShowStats extends JFrame{
         super("GPX Manager");
 
         dateLabel.setText("Date: " + Date.Date());
-        totalDisLabel.setText("Total distance of the track is: " + Statistics.totalDistance());
-        totalTimeLabel.setText("Total time taken to complete the track: " + Statistics.totalTime());
-        averageSpeedLabel.setText("Average speed of the track is: " + Statistics.averageSpeed());
-        elevationDifLabel.setText("The elevation difference in the track is: " + Statistics.altitudeDifference());
+        totalDisLabel.setText("Total distance of the track is: " + Statistics.totalDistance() + "m");
+        totalTimeLabel.setText("Total time taken to complete the track: " + Statistics.totalTime() + "s");
+        averageSpeedLabel.setText("Average speed of the track is: " + Statistics.averageSpeed() + "km/h");
+        elevationDifLabel.setText("The elevation difference in the track is: " + Statistics.altitudeDifference() + "m");
 
         this.setContentPane(this.panelMain);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

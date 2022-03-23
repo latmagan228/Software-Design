@@ -14,6 +14,7 @@ public class HomePage extends JFrame {
     private JLabel label;
     private JPanel panelMain;
 
+
     public HomePage() {
 
         super("GPX Manager");

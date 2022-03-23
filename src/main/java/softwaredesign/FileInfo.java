@@ -7,7 +7,7 @@ import java.util.*;
 public  class  FileInfo {
 
     static String GpxString() throws IOException {
-        Path fileName = Path.of("sample1.gpx");
+        Path fileName = Path.of("sample2.gpx");
         String actual = Files.readString(fileName);
 
         return actual;
