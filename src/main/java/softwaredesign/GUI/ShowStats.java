@@ -19,9 +19,16 @@ public class ShowStats extends JFrame{
     public ShowStats() throws IOException {
         super("GPX Manager");
 
+        int timeDifference = Statistics.totalTime();
+        int totalHours = timeDifference / 3600;
+        int totalMinutes = (timeDifference / 60) % 60;
+
         dateLabel.setText("Date: " + Date.Date());
         totalDisLabel.setText("Total distance of the track is: " + Statistics.totalDistance() + "m");
-        totalTimeLabel.setText("Total time taken to complete the track: " + Statistics.totalTime() + "s");
+        System.out.println("The total time completed of the track is: ");
+        System.out.print(totalHours + " hours, ");
+        System.out.print(totalMinutes + " minutes, ");
+        System.out.println(timeDifference % 60 + " seconds.");
         averageSpeedLabel.setText("Average speed of the track is: " + Statistics.averageSpeed() + "km/h");
         elevationDifLabel.setText("The elevation difference in the track is: " + Statistics.altitudeDifference() + "m");
 
