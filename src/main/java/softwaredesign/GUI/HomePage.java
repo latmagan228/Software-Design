@@ -51,6 +51,5 @@ public class HomePage extends JFrame {
 
     public static void main() throws IOException {
         new HomePage();
-        PrintInfo.PrintInfo();
     }
 }

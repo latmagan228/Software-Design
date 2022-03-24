@@ -1,8 +1,11 @@
 package softwaredesign.GUI;
 
+import softwaredesign.PrintInfo;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Objects;
 
 public class LogIn extends JFrame {
@@ -30,6 +33,11 @@ public class LogIn extends JFrame {
                 if (Objects.equals(username, "user1") && Objects.equals(password, "12345")) {
                     successfulLabel.setText("Login Successful!");
                     new HomePage();
+                    try {
+                        PrintInfo.PrintInfo();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
                 else{
                     successfulLabel.setText("Login Failed, please try again");
