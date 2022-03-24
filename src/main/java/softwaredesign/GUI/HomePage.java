@@ -49,7 +49,7 @@ public class HomePage extends JFrame {
     }
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main() throws IOException {
         new HomePage();
         PrintInfo.PrintInfo();
     }

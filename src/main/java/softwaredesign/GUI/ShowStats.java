@@ -37,8 +37,7 @@ public class ShowStats extends JFrame{
 
     }
 
-    public static void main(String[] args) throws IOException {
-
+    public static void main() throws IOException {
         new ShowStats();
     }
 
