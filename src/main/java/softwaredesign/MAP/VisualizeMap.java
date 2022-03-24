@@ -21,7 +21,7 @@ public class VisualizeMap {
         ArrayList<GeoPosition> trackPoints = new ArrayList<GeoPosition>();
 
         // Display the viewer in a JFrame
-        JFrame frame = new JFrame("JXMapviewer2 Example 2");
+        JFrame frame = new JFrame("GPX Manager");
         frame.getContentPane().add(mapViewer);
         frame.setSize(800, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

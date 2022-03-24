@@ -32,9 +32,8 @@ public class LogIn extends JFrame {
                     new HomePage();
                 }
                 else{
-                    successfulLabel.setText("Login Failed, Please try again");
+                    successfulLabel.setText("Login Failed, please try again");
                 }
-
             }
         });
     }
