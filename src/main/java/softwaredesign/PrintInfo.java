@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 
 
-public class Main {
+public class PrintInfo {
 
-    public static void main(String[] args) throws IOException {
+    public static void PrintInfo() throws IOException {
         FileStatus fileStatus = new FileStatus();
         fileStatus.CheckStatus();
         ArrayList<Double> latitudes = FileInfo.ReadFile().get(0);
@@ -52,4 +52,6 @@ public class Main {
         System.out.println("The elevation difference of the track is: ");
         System.out.println(Statistics.altitudeDifference() + " meters");
     }
+
+
 }

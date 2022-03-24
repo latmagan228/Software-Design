@@ -1,6 +1,7 @@
 package softwaredesign.GUI;
 
 import softwaredesign.MAP.VisualizeMap;
+import softwaredesign.PrintInfo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -48,7 +49,8 @@ public class HomePage extends JFrame {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new HomePage();
+        PrintInfo.PrintInfo();
     }
 }
