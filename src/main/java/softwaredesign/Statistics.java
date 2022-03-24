@@ -32,6 +32,7 @@ public class Statistics {
             distance = Math.pow(distance, 2) + Math.pow(height, 2);
 
             d = Math.sqrt(distance) + d;
+            d = Math.round(d*100.0)/100.0;
         }
         return  d;
     }
@@ -72,6 +73,7 @@ public class Statistics {
         double speed;
 
         speed = (totalDistance / 1000) / (totalTime / 3600);
+        speed = Math.round(speed*100.0)/100.0;
         return speed;
     }
 
@@ -79,6 +81,7 @@ public class Statistics {
         ArrayList<Double> elevations = FileInfo.ReadFile().get(2);
 
         Double elevationDifference = elevations.get(elevations.size() - 1) - elevations.get(0);
+        elevationDifference = Math.round(elevationDifference*100.0)/100.0;
         return elevationDifference;
     }
 }
