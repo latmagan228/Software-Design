@@ -30,6 +30,7 @@ public class HomePage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     new ShowStats();
+
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }

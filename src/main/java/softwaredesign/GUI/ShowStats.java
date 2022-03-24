@@ -19,22 +19,23 @@ public class ShowStats extends JFrame implements GPXSportPlugin {
     private JLabel averageSpeedLabel;
     private JLabel elevationDifLabel;
     private JPanel panelMain;
+    private JLabel sportLabel;
 
     public ShowStats() throws IOException {
         super("GPX Manager");
-
         this.setContentPane(this.panelMain);
-
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocation(600,150);
         this.pack();
         this.setVisible(true);
 
+        Running();
+
     }
 
-    public static void main(String[] Args) throws IOException {
-        ShowStats sport = new ShowStats();
-        sport.Running();
+    public static void main() throws IOException {
+        new ShowStats();
+
     }
 
     @Override
@@ -49,6 +50,7 @@ public class ShowStats extends JFrame implements GPXSportPlugin {
         totalTimeLabel.setText("The total time completed of the track is: " + totalHours + " hours, " + totalMinutes + " minutes, " + timeDifference % 60 + " seconds." );
         averageSpeedLabel.setText("Average speed of the track is: " + Statistics.averageSpeed() + "km/h");
         elevationDifLabel.setText("The elevation difference in the track is: " + Statistics.altitudeDifference() + "m");
+        sportLabel.setText("Current sport: " + running);
     }
 
 }
