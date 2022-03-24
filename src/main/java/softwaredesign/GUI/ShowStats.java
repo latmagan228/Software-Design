@@ -25,10 +25,7 @@ public class ShowStats extends JFrame{
 
         dateLabel.setText("Date: " + Date.Date());
         totalDisLabel.setText("Total distance of the track is: " + Statistics.totalDistance() + "m");
-        System.out.println("The total time completed of the track is: ");
-        System.out.print(totalHours + " hours, ");
-        System.out.print(totalMinutes + " minutes, ");
-        System.out.println(timeDifference % 60 + " seconds.");
+        totalTimeLabel.setText("The total time completed of the track is: " + totalHours + " hours, " + totalMinutes + " minutes, " + timeDifference % 60 + " seconds." );
         averageSpeedLabel.setText("Average speed of the track is: " + Statistics.averageSpeed() + "km/h");
         elevationDifLabel.setText("The elevation difference in the track is: " + Statistics.altitudeDifference() + "m");
 
