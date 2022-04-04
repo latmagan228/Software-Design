@@ -30,7 +30,6 @@ public class ShowStats extends JFrame implements GPXSportPlugin {
         this.setVisible(true);
 
         Running();
-
     }
 
     public static void main() throws IOException {
@@ -47,7 +46,7 @@ public class ShowStats extends JFrame implements GPXSportPlugin {
 
         dateLabel.setText("Date: " + Date.Date());
         totalDisLabel.setText("Total distance of the track is: " + Statistics.totalDistance() + "m");
-        totalTimeLabel.setText("The total time completed of the track is: " + totalHours + " hours, " + totalMinutes + " minutes, " + timeDifference % 60 + " seconds." );
+        totalTimeLabel.setText("The total time taken to complete of the track is: " + totalHours + " hours, " + totalMinutes + " minutes, " + timeDifference % 60 + " seconds." );
         averageSpeedLabel.setText("Average speed of the track is: " + Statistics.averageSpeed() + "km/h");
         elevationDifLabel.setText("The elevation difference in the track is: " + Statistics.altitudeDifference() + "m");
         sportLabel.setText("Current sport: " + running);
